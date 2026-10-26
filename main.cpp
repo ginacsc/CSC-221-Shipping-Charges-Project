@@ -32,20 +32,17 @@ int main() {
     cout << "Enter distance in miles: ";
     cin >> distance;
 
-    if (distance <= 0 || distance > 3000) {
+    if (distance < 10 || distance > 3000) {
         cout << "Invalid distance." << endl;
         return 0;
     }
-
-    if (distance > 0 || distance <= 3000)
+    else {
         scalingFactor = ceil(distance / 500);
+    }
 
     shippingCharge = scalingFactor * rate;
 
     cout << "Total shipping charge: $" << fixed << setprecision (2) << shippingCharge << endl;
-
-    //cout << "Scaling Factor: " << scalingFactor << endl;
-    //cout << "Rate: " << rate << endl;
 
     return 0;
 
