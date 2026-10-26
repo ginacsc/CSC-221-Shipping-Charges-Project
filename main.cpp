@@ -27,6 +27,16 @@ int main() {
     else if (weight > 10 && weight <= 20)
         rate = extraHeavyRate;
 
+    cout << "Enter distance in miles: ";
+    cin >> distance;
+
+    if (distance <= 0 || distance > 3000)
+        cout << "Invalid distance." << endl;
+
+    else scalingFactor = ceil(distance / 500);
+
+    cout << "Scaling Factor: " << scalingFactor << endl;
+
     cout << rate << endl;
 
     return 0;
