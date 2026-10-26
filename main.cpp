@@ -4,10 +4,9 @@
 using namespace std;
 
 int main() {
-
     double weight, distance, rate, shippingCharge;
     const double lightRate = 1.10;
-    const double mediumRate = 1.20;
+    const double mediumRate = 2.20;
     const double heavyRate = 3.70;
     const double extraHeavyRate = 4.80;
     int scalingFactor;
@@ -15,10 +14,12 @@ int main() {
     cout << "Enter weight in kg: ";
     cin >> weight;
 
-    if (weight <= 0 || weight > 20)
+    if (weight <= 0 || weight > 20) {
         cout << "Invalid weight." << endl;
+        return 0;
+    }
 
-    else if (weight > 0 && weight <= 2)
+    if (weight > 0 && weight <= 2)
         rate = lightRate;
     else if (weight > 2 && weight <= 6)
         rate = mediumRate;
@@ -30,14 +31,21 @@ int main() {
     cout << "Enter distance in miles: ";
     cin >> distance;
 
-    if (distance <= 0 || distance > 3000)
+    if (distance <= 0 || distance > 3000) {
         cout << "Invalid distance." << endl;
+        return 0;
+    }
 
-    else scalingFactor = ceil(distance / 500);
+    if (distance > 0 || distance <= 3000)
+        scalingFactor = ceil(distance / 500);
+
+    shippingCharge = scalingFactor * rate;
+
+    cout << shippingCharge << endl;
 
     cout << "Scaling Factor: " << scalingFactor << endl;
 
-    cout << rate << endl;
+    cout << "Rate: " << rate << endl;
 
     return 0;
 
