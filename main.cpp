@@ -1,6 +1,7 @@
 //This program calculates shipping charges based upon package weight and distance shipped.
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -41,11 +42,10 @@ int main() {
 
     shippingCharge = scalingFactor * rate;
 
-    cout << shippingCharge << endl;
+    cout << "Total shipping charge: $" << fixed << setprecision (2) << shippingCharge << endl;
 
-    cout << "Scaling Factor: " << scalingFactor << endl;
-
-    cout << "Rate: " << rate << endl;
+    //cout << "Scaling Factor: " << scalingFactor << endl;
+    //cout << "Rate: " << rate << endl;
 
     return 0;
 
